@@ -1,0 +1,40 @@
+# -*- coding: utf-8 -*-
+
+from PyQt6 import QtCore, QtGui, QtWidgets
+
+class Ui_CoffeeMainWindow(object):
+    def setupUi(self, CoffeeMainWindow):
+        CoffeeMainWindow.setObjectName("CoffeeMainWindow")
+        CoffeeMainWindow.resize(800, 600)
+        self.centralwidget = QtWidgets.QWidget(CoffeeMainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
+        self.tableWidget.setObjectName("tableWidget")
+        self.verticalLayout.addWidget(self.tableWidget)
+        self.buttonLayout = QtWidgets.QHBoxLayout()
+        self.buttonLayout.setObjectName("buttonLayout")
+        self.addButton = QtWidgets.QPushButton(self.centralwidget)
+        self.addButton.setObjectName("addButton")
+        self.buttonLayout.addWidget(self.addButton)
+        self.editButton = QtWidgets.QPushButton(self.centralwidget)
+        self.editButton.setObjectName("editButton")
+        self.buttonLayout.addWidget(self.editButton)
+        self.verticalLayout.addLayout(self.buttonLayout)
+        CoffeeMainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(CoffeeMainWindow)
+        self.menubar.setObjectName("menubar")
+        CoffeeMainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(CoffeeMainWindow)
+        self.statusbar.setObjectName("statusbar")
+        CoffeeMainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(CoffeeMainWindow)
+        QtCore.QMetaObject.connectSlotsByName(CoffeeMainWindow)
+
+    def retranslateUi(self, CoffeeMainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        CoffeeMainWindow.setWindowTitle(_translate("CoffeeMainWindow", "Информация о кофе"))
+        self.addButton.setText(_translate("CoffeeMainWindow", "Добавить"))
+        self.editButton.setText(_translate("CoffeeMainWindow", "Редактировать"))
